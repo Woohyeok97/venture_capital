@@ -11,7 +11,7 @@ import {
   Search,
   Megaphone,
   Rocket,
-  Landmark,
+  PiggyBank,
   CircleDollarSign,
   Newspaper,
   ChartNoAxesCombined,
@@ -36,36 +36,52 @@ export function Navigation() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56 bg-[#1e242e] text-foreground" align="start">
           <DropdownMenuItem className="cursor-pointer">
-            <Search />
-            <Link href="#">통합검색</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <Search />
+              통합검색
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <ChartNoAxesCombined />
-            <Link href="#">투자/M&A</Link>
+            <Link href="/browse/investments" className="flex items-center gap-2">
+              <ChartNoAxesCombined />
+              투자/M&A
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <Megaphone />
-            <Link href="#">IR</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <Megaphone />
+              IR
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <Rocket />
-            <Link href="#">스타트업</Link>
+            <Link href="/browse/startups" className="flex items-center gap-2">
+              <Rocket />
+              스타트업
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <Landmark />
-            <Link href="#">투자사</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <PiggyBank />
+              투자사
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <CircleDollarSign />
-            <Link href="#">펀드</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <CircleDollarSign />
+              펀드
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <Newspaper />
-            <Link href="#">뉴스</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <Newspaper />
+              뉴스
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <HandCoins />
-            <Link href="#">지원사업</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <HandCoins />
+              지원사업
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -79,16 +95,21 @@ export function Navigation() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56 bg-[#1e242e] text-foreground" align="start">
           <DropdownMenuItem className="cursor-pointer">
-            <GitCompareArrows />
-            <Link href="#">피어그룹 비교</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <GitCompareArrows />
+              피어그룹 비교
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <FolderOpenDot />
-            <Link href="#">내 컬렉션</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <FolderOpenDot />내 컬렉션
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <FolderSearch />
-            <Link href="#">공개 컬렉션</Link>
+            <Link href="#" className="flex items-center gap-2">
+              <FolderSearch />
+              공개 컬렉션
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

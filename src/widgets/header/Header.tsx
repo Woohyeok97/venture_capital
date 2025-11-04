@@ -1,13 +1,19 @@
 // components
 import { Input } from '@/shared/ui/input/input';
-import { UserRoundIcon } from 'lucide-react';
+import { UserRoundIcon, Landmark } from 'lucide-react';
 import { Navigation } from './Navigation';
+import Link from 'next/link';
 
 export function Header() {
   return (
-    <div className="flex justify-between items-center p-4 bg-[#1e242e]">
+    <div className="flex justify-between items-center p-4 bg-[#1e242e] border-b-[1px] border-[#303946]">
       <div className="flex items-center gap-4">
-        <div className="text-lg font-bold">Venture Capital</div>
+        <div className="text-lg font-bold">
+          <Link href="/" className="flex items-center gap-1 text-[#bebebe] font-bold">
+            <Landmark />
+            Venture Capital
+          </Link>
+        </div>
         <Navigation />
       </div>
 
