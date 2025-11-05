@@ -6,8 +6,10 @@ import { Info } from 'lucide-react';
 import { Checkbox } from '@/shared/ui/checkbox/checkbox';
 import { Input } from '@/shared/ui/input/input';
 import { Button } from '@/shared/ui/button/button';
+import { InvestmentsBrowse } from '@/widgets/guide/browse/InvestmentsBrowse';
 // hooks
 import useDataTable from '@/shared/lib/tanstack-table/hooks/useDataTable';
+import { useOverlay } from '@/widgets/overlay/OverlayProvider';
 
 const MOCK = [
   {
@@ -41,6 +43,8 @@ const MOCK = [
 ];
 
 export default function InvestmentsPage() {
+  const { openOverlay } = useOverlay();
+
   // 테이블 컬럼
   const columns = useMemo(
     (): ColumnDef<any>[] => [
@@ -96,7 +100,11 @@ export default function InvestmentsPage() {
       <div className="flex flex-col gap-4 p-4">
         <div className="flex items-center gap-1">
           <h1 className="text-xl font-bold">투자/M&A 탐색</h1>
-          <Info size={16} className="text-[#939fb2] cursor-pointer hover:text-[#f3f5f8]" />
+          <Info
+            size={14}
+            className="text-[#939fb2] cursor-pointer hover:text-[#f3f5f8]"
+            onClick={() => openOverlay(() => <InvestmentsBrowse />)}
+          />
         </div>
 
         <div className="flex items-center gap-4 text-sm font-bold">
