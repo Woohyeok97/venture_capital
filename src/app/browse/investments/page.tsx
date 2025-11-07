@@ -103,7 +103,7 @@ export default function InvestmentsPage() {
           <Info
             size={14}
             className="text-[#939fb2] cursor-pointer hover:text-[#f3f5f8]"
-            onClick={() => openOverlay(() => <InvestmentsBrowse />)}
+            onClick={() => openOverlay(close => <InvestmentsBrowse close={close} />)}
           />
         </div>
 
@@ -127,7 +127,7 @@ export default function InvestmentsPage() {
           />
           <Button className="bg-[#66f]">다운로드</Button>
           <Button className="bg-[#485567]">필터</Button>
-          <Button className="bg-[#485567]">열설정</Button>
+          <Button className="bg-[#485567] border border-gray-50">열설정</Button>
         </div>
         <DataTable />
       </div>
