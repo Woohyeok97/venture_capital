@@ -1,7 +1,7 @@
 'use client';
 
 import { TrendingUp } from 'lucide-react';
-import { Pie, PieChart } from 'recharts';
+import { LabelList, Pie, PieChart } from 'recharts';
 
 import {
   Card,
@@ -18,7 +18,7 @@ import {
   ChartTooltipContent,
 } from '@/shared/ui/chart/chart';
 
-export const description = 'A donut chart';
+export const description = 'A pie chart with a label list';
 
 const chartData = [
   { browser: 'chrome', visitors: 275, fill: 'var(--color-chrome)' },
@@ -54,28 +54,27 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function TestChart({ data, config }: { data: any; config: any }) {
-  const chartConfig = {
-    ...config,
-  } satisfies ChartConfig;
+export function TestChart() {
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Donut</CardTitle>
+        <CardTitle>Pie Chart - Label List</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer config={chartConfig} className="mx-auto aspect-square max-h-[250px]">
           <PieChart>
-            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-            <Pie
-              data={data}
-              dataKey="number"
-              nameKey="target"
-              innerRadius={60}
-              className="cursor-pointer"
-              onClick={(item, index) => console.log('hi:', item.name)}
-            />
+            <ChartTooltip content={<ChartTooltipContent nameKey="visitors" hideLabel />} />
+            <Pie data={chartData} dataKey="visitors">
+              <LabelList
+                dataKey="browser"
+                className="fill-background"
+                stroke="none"
+                fill="var(--chart-4)"
+                fontSize={12}
+                // formatter={(value: keyof typeof chartConfig) => chartConfig[value]?.label}
+              />
+            </Pie>
           </PieChart>
         </ChartContainer>
       </CardContent>
@@ -90,6 +89,7 @@ export function TestChart({ data, config }: { data: any; config: any }) {
     </Card>
   );
 }
+
 // 'use client';
 
 // import { TrendingUp } from 'lucide-react';
@@ -146,7 +146,10 @@ export function TestChart({ data, config }: { data: any; config: any }) {
 //   },
 // } satisfies ChartConfig;
 
-// export function TestChart({ data }: { data: any }) {
+// export function TestChart({ data, config }: { data: any; config: any }) {
+//   const chartConfig = {
+//     ...config,
+//   } satisfies ChartConfig;
 //   return (
 //     <Card className="flex flex-col">
 //       <CardHeader className="items-center pb-0">
@@ -157,7 +160,14 @@ export function TestChart({ data, config }: { data: any; config: any }) {
 //         <ChartContainer config={chartConfig} className="mx-auto aspect-square max-h-[250px]">
 //           <PieChart>
 //             <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-//             <Pie data={chartData} dataKey="visitors" nameKey="browser" innerRadius={60} />
+//             <Pie
+//               data={data}
+//               dataKey="number"
+//               nameKey="target"
+//               innerRadius={60}
+//               className="cursor-pointer"
+//               onClick={(item, index) => console.log('hi:', item.name)}
+//             />
 //           </PieChart>
 //         </ChartContainer>
 //       </CardContent>
