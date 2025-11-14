@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo } from 'react';
 
 // 차트 색상 목록
@@ -19,7 +21,7 @@ interface Params<T> {
   key: keyof T;
   amountKey: keyof T;
 }
-export default function useDataChart<T>({ data, key, amountKey }: Params<T>) {
+export function useDataChart<T>({ data, key, amountKey }: Params<T>) {
   // 차트 데이터
   const chartData = useMemo(() => {
     const result = {};

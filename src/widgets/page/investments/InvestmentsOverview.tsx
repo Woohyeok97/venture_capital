@@ -17,34 +17,32 @@ import {
   SelectItem,
 } from '@/shared/ui/select/select';
 import { Pie, PieChart, Cell, BarChart, YAxis, XAxis, Bar, CartesianGrid } from 'recharts';
-// icons
 import { ChartPie } from 'lucide-react';
 // types
 import { InvestmentType } from '@/entities/investments/investments.type';
 // hooks
-import useDataChart from '@/app/browse/investments/useDataChart';
+import { useDataChart } from '@/shared/lib/chart/useDataChart';
+// utils
+import { formatDynamicUnit } from '@/shared/lib/utils/formatDynamicUnit';
 
-export function formatDynamicUnit(value: number) {
-  if (value >= 1_0000_0000) return `${Math.round(value / 1_0000_0000)}억`;
-  if (value >= 1_0000) return `${Math.round(value / 1_0000)}만`;
-  if (value >= 1000) return `${Math.round(value / 1000)}천`;
-  return value.toString();
-}
+const CHART_KEYS: { label: string; key: keyof InvestmentType }[] = [
+  { label: '투자 단계', key: 'investmentStep' },
+  { label: '투자 유형', key: 'investmentType' },
+  { label: '투자 분야', key: 'investmentCategory' },
+  { label: '투자 기술', key: 'investmentTechnology' },
+];
 
 interface InvestmentsOverviewProps {
   data: InvestmentType[];
 }
 export default function InvestmentsOverview({ data }: InvestmentsOverviewProps) {
-  const [chartKey, setChartKey] = useState<'investmentStep' | 'investmentType'>('investmentStep');
+  const [chartKey, setChartKey] = useState<keyof InvestmentType>('investmentStep');
 
   const { chartData, chartConfig } = useDataChart<InvestmentType>({
     data,
     key: chartKey,
     amountKey: 'investmentAmount',
   });
-
-  console.log('chartData', chartData);
-  console.log('chartConfig', chartConfig);
 
   return (
     <Accordion type="single" collapsible defaultValue="" className="">
@@ -66,10 +64,11 @@ export default function InvestmentsOverview({ data }: InvestmentsOverviewProps) 
                 <SelectValue />
               </SelectTrigger>
               <SelectContent align="start">
-                <SelectItem value="investmentStep">투자 단계</SelectItem>
-                <SelectItem value="investmentType">투자 유형</SelectItem>
-                <SelectItem value="investmentCategory">투자 분야</SelectItem>
-                <SelectItem value="investmentTechnology">투자 기술</SelectItem>
+                {CHART_KEYS.map(item => (
+                  <SelectItem key={item.key} value={item.key}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
@@ -138,7 +137,6 @@ export default function InvestmentsOverview({ data }: InvestmentsOverviewProps) 
                         nameKey="name"
                         innerRadius={60}
                         outerRadius={100}
-                        onClick={item => console.log('hi', item)}
                       >
                         {[...chartData]
                           .sort((a, b) => b.value - a.value)
