@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 // components
 import { Header } from '@/widgets/header/Header';
+import Footer from '@/widgets/footer/Footer';
 import { OverlayProvider } from '@/widgets/overlay/OverlayProvider';
 
 const geistSans = Geist({
@@ -31,7 +32,8 @@ export default function RootLayout({
         <OverlayProvider>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 mb-8">{children}</main>
+            <Footer />
           </div>
         </OverlayProvider>
       </body>

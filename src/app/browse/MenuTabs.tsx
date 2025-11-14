@@ -57,11 +57,11 @@ export function MenuTabs() {
       </div>
 
       <div className="flex gap-6 text-[#bebebe] font-bold">
-        {MENU_ITEMS.map((item, index) => (
+        {MENU_ITEMS.map(item => (
           <Link
             href={item.href}
             key={item.label}
-            className={`cursor-pointer text-[#939fb2] ${currentTab === item.value ? 'text-foreground border-b-2 border-foreground' : 'hover:text-[#d9dfe8]'} `}
+            className={`cursor-pointer text-[#939fb2] pb-2 ${currentTab === item.value ? 'text-foreground border-b-2 border-foreground' : 'hover:text-[#d9dfe8]'} `}
           >
             {item.label}
           </Link>
