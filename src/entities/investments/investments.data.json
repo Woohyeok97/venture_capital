@@ -1,0 +1,122 @@
+[
+  {
+    "investmentDate": {
+      "date": "2024-03-12",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 15000000000,
+    "investmentStep": "Series A",
+    "investmentType": "투자",
+    "investmentTarget": "엔비디아",
+    "investmentCategory": "반도체",
+    "investmentTechnology": "인공지능"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-01-20",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 5000000000,
+    "investmentStep": "Seed",
+    "investmentType": "투자",
+    "investmentTarget": "쿠팡",
+    "investmentCategory": "콘텐츠",
+    "investmentTechnology": "인터넷"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-06-05",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 8000000000,
+    "investmentStep": "Pre-A",
+    "investmentType": "투자",
+    "investmentTarget": "삼성바이오로직스",
+    "investmentCategory": "바이오/의료",
+    "investmentTechnology": "연구개발"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-04-01",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 12000000000,
+    "investmentStep": "Series A",
+    "investmentType": "투자",
+    "investmentTarget": "스페이스X",
+    "investmentCategory": "우주/항공",
+    "investmentTechnology": "제조"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-05-22",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 20000000000,
+    "investmentStep": "M&A",
+    "investmentType": "인수합병",
+    "investmentTarget": "네이버",
+    "investmentCategory": "콘텐츠",
+    "investmentTechnology": "클라우드"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-02-18",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 7000000000,
+    "investmentStep": "Pre-A",
+    "investmentType": "투자",
+    "investmentTarget": "현대자동차",
+    "investmentCategory": "환경/에너지",
+    "investmentTechnology": "제조"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-07-10",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 4000000000,
+    "investmentStep": "Seed",
+    "investmentType": "투자",
+    "investmentTarget": "스트라이프",
+    "investmentCategory": "금융",
+    "investmentTechnology": "인터넷"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-03-30",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 9500000000,
+    "investmentStep": "Series A",
+    "investmentType": "투자",
+    "investmentTarget": "LG에너지솔루션",
+    "investmentCategory": "환경/에너지",
+    "investmentTechnology": "연구개발"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-08-14",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 6000000000,
+    "investmentStep": "Pre-A",
+    "investmentType": "투자",
+    "investmentTarget": "넷플릭스",
+    "investmentCategory": "콘텐츠",
+    "investmentTechnology": "프로그램"
+  },
+  {
+    "investmentDate": {
+      "date": "2024-09-01",
+      "pressReleaseUrl": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=400967"
+    },
+    "investmentAmount": 30000000000,
+    "investmentStep": "M&A",
+    "investmentType": "인수합병",
+    "investmentTarget": "카카오",
+    "investmentCategory": "금융",
+    "investmentTechnology": "클라우드"
+  }
+]
