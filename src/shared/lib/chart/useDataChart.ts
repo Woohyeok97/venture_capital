@@ -24,11 +24,11 @@ interface Params<T> {
 export function useDataChart<T>({ data, key, amountKey }: Params<T>) {
   // 차트 데이터
   const chartData = useMemo(() => {
-    const result = {};
+    const result: Record<string, { value: number; amount: number }> = {};
 
     data.forEach(item => {
-      const category = item[key];
-      const amount = item[amountKey];
+      const category = String(item[key]);
+      const amount = Number(item[amountKey]);
 
       if (!result[category]) {
         result[category] = { value: 0, amount: 0 };
@@ -49,7 +49,7 @@ export function useDataChart<T>({ data, key, amountKey }: Params<T>) {
 
   // 차트 설정
   const chartConfig = useMemo(() => {
-    const config = {};
+    const config: Record<string, { label: string; color: string }> = {};
 
     chartData.forEach((item, index) => {
       config[item.name] = {

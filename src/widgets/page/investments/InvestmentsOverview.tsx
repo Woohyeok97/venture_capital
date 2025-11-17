@@ -35,7 +35,7 @@ const CHART_KEYS: { label: string; key: keyof InvestmentType }[] = [
 interface InvestmentsOverviewProps {
   data: InvestmentType[];
 }
-export default function InvestmentsOverview({ data }: InvestmentsOverviewProps) {
+export function InvestmentsOverview({ data }: InvestmentsOverviewProps) {
   const [chartKey, setChartKey] = useState<keyof InvestmentType>('investmentStep');
 
   const { chartData, chartConfig } = useDataChart<InvestmentType>({
@@ -59,7 +59,10 @@ export default function InvestmentsOverview({ data }: InvestmentsOverviewProps) 
 
         <AccordionContent>
           <div className="flex flex-col items-end gap-6 bg-gray-900 p-4 rounded-md border border-gray-700">
-            <Select value={chartKey} onValueChange={setChartKey}>
+            <Select
+              value={chartKey}
+              onValueChange={value => setChartKey(value as keyof InvestmentType)}
+            >
               <SelectTrigger className="w-[140px]">
                 <SelectValue />
               </SelectTrigger>

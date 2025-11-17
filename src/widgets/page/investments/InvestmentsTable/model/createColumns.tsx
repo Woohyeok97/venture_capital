@@ -6,6 +6,8 @@ import { Badge } from '@/shared/ui/badge/badge';
 // types
 import { InvestmentType } from '@/entities/investments/investments.type';
 import { ColumnDef } from '@tanstack/react-table';
+// utils
+import { formatDynamicUnit } from '@/shared/lib/utils/formatDynamicUnit';
 
 export function createColumns(): ColumnDef<InvestmentType>[] {
   return [
@@ -46,6 +48,7 @@ export function createColumns(): ColumnDef<InvestmentType>[] {
     {
       header: '투자금액',
       accessorKey: 'investmentAmount',
+      cell: ({ row }) => formatDynamicUnit(row.original.investmentAmount),
     },
     {
       header: '투자단계',

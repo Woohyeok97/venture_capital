@@ -33,7 +33,7 @@ export function InvestmentsTable({ data }: InvestmentsTableProps) {
         <Button className="bg-[#485567]">필터</Button>
         <Button className="bg-[#485567] borde">열설정</Button>
       </div>
-      <DataTable table={table} columns={table.columns} />
+      <DataTable table={table} columns={columns} />
     </div>
   );
 }
