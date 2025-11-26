@@ -4055,6 +4055,9 @@ __metadata:
     tailwindcss: "npm:^4"
     tw-animate-css: "npm:^1.4.0"
     typescript: "npm:^5"
+  dependenciesMeta:
+    eslint-plugin-prettier@5.5.4:
+      unplugged: true
   languageName: unknown
   linkType: soft
 

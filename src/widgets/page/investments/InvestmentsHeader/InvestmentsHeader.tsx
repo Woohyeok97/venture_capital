@@ -1,9 +1,9 @@
 'use client';
 // components
 import { Info } from 'lucide-react';
-import { InvestmentsBrowse } from '@/widgets/guide/browse/InvestmentsBrowse';
+import { InvestmentsGuide } from '@/widgets/page/investments/InvestmentsHeader/InvestmentsGuide/InvestmentsGuide';
 // hooks
-import { useOverlay } from '@/widgets/overlay/OverlayProvider';
+import { useOverlay } from '@/app/providers/OverlayProvider';
 
 export function InvestmentsHeader() {
   const { openOverlay } = useOverlay();
@@ -15,7 +15,7 @@ export function InvestmentsHeader() {
         <Info
           size={16}
           className="text-text-sub cursor-pointer hover:text-foreground"
-          onClick={() => openOverlay(close => <InvestmentsBrowse close={close} />)}
+          onClick={() => openOverlay(close => <InvestmentsGuide close={close} />)}
         />
       </div>
 

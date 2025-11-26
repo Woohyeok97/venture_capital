@@ -1,11 +1,15 @@
 // components
-import { InvestmentsHeader } from '@/widgets/page/investments/InvestmentsHeader';
+import { InvestmentsHeader } from '@/widgets/page/investments/InvestmentsHeader/InvestmentsHeader';
 import { InvestmentsOverview } from '@/widgets/page/investments/InvestmentsOverview';
 import { InvestmentsTable } from '@/widgets/page/investments/InvestmentsTable/ui/InvestmentsTable';
 // types
 import { InvestmentType } from '@/entities/investments/investments.type';
 
+// function wait(ms: number) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 export default async function InvestmentsPage() {
+  // await wait(2000);
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/investments`, {
     cache: 'no-store',
   });
