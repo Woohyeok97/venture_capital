@@ -5,7 +5,11 @@ import { InvestmentsTable } from '@/widgets/page/investments/InvestmentsTable/ui
 // types
 import { InvestmentType } from '@/entities/investments/investments.type';
 
+// function wait(ms: number) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 export default async function InvestmentsPage() {
+  // await wait(2000);
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/investments`, {
     cache: 'no-store',
   });

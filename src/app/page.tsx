@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 
 export default function Home() {
-  redirect('/browse/investments');
+  return <div>Home</div>;
+  // redirect('/browse/investments');
 }
