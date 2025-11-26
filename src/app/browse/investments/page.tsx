@@ -1,5 +1,5 @@
 // components
-import { InvestmentsHeader } from '@/widgets/page/investments/InvestmentsHeader';
+import { InvestmentsHeader } from '@/widgets/page/investments/InvestmentsHeader/InvestmentsHeader';
 import { InvestmentsOverview } from '@/widgets/page/investments/InvestmentsOverview';
 import { InvestmentsTable } from '@/widgets/page/investments/InvestmentsTable/ui/InvestmentsTable';
 // types
