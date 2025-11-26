@@ -4,8 +4,8 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 // components
 import { Header } from '@/widgets/header/Header';
-import Footer from '@/widgets/footer/Footer';
-import { OverlayProvider } from '@/widgets/overlay/OverlayProvider';
+import { Footer } from '@/widgets/footer/Footer';
+import { OverlayProvider } from '@/app/providers/OverlayProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

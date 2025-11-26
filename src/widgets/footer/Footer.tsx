@@ -1,7 +1,7 @@
 // icons
 import { Landmark } from 'lucide-react';
 
-export default function Footer() {
+export function Footer() {
   return (
     <div className="bg-gray-900 py-8 px-4 font-bold border-t border-gray-700">
       <div className="flex flex-col gap-4">

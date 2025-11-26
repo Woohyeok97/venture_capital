@@ -1,6 +1,6 @@
 'use client';
-import { createContext, useContext, useState } from 'react';
-// components
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 type Content = (close: () => void) => React.ReactNode;
 
@@ -12,8 +12,10 @@ interface OverlayContextType {
 const OverlayContext = createContext<OverlayContextType | null>(null);
 
 export function OverlayProvider({ children }: { children: React.ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [content, setContent] = useState<Content | null>(null);
+  const [isOpen, setIsOpen] = useState(false); // 오버레이 오픈 여부
+  const [content, setContent] = useState<Content | null>(null); // 오버레이로 렌더링할 컨텐츠
+  const path = usePathname();
+  const prevPath = useRef(path);
 
   const openOverlay = (content: Content) => {
     setIsOpen(true);
@@ -24,6 +26,15 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
     setIsOpen(false);
     setContent(null);
   };
+
+  // 페이지 url 변경 시 오버레이 닫기
+  useEffect(() => {
+    if (isOpen && prevPath.current !== path) {
+      closeOverlay();
+    }
+
+    prevPath.current = path;
+  }, [isOpen, path]);
 
   return (
     <OverlayContext.Provider value={{ openOverlay, closeOverlay }}>

@@ -3,7 +3,7 @@
 import { Info } from 'lucide-react';
 import { InvestmentsGuide } from '@/widgets/page/investments/InvestmentsHeader/InvestmentsGuide/InvestmentsGuide';
 // hooks
-import { useOverlay } from '@/widgets/overlay/OverlayProvider';
+import { useOverlay } from '@/app/providers/OverlayProvider';
 
 export function InvestmentsHeader() {
   const { openOverlay } = useOverlay();
