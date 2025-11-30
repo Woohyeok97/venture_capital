@@ -42,7 +42,7 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
       {isOpen && content && (
         <div className="fixed inset-0 bg-black/50" onClick={closeOverlay}>
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md bg-[#1e242e] p-6 min-w-xl"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md bg-[#1e242e] p-6 min-w-xl border border-gray-700"
             onClick={(event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()}
           >
             <div className="absolute top-5 right-5 p-1 cursor-pointer" onClick={closeOverlay}>
