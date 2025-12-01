@@ -1,7 +1,7 @@
 // components
 import { Input } from '@/shared/ui/input/input';
 import { UserRoundIcon, Landmark } from 'lucide-react';
-import { Navigation } from './Navigation';
+import { Navigation } from './navigation/Navigation';
 import Link from 'next/link';
 
 export function Header() {

@@ -4,45 +4,15 @@ import { useEffect, useState } from 'react';
 // component
 import { Landmark } from 'lucide-react';
 import Link from 'next/link';
-
-const MENU_ITEMS = [
-  {
-    label: '투자/M&A',
-    value: 'investments',
-    href: '/browse/investments',
-  },
-  {
-    label: 'IR',
-    value: 'ir',
-    href: '#',
-  },
-  {
-    label: '스타트업',
-    value: 'startups',
-    href: '/browse/startups',
-  },
-  {
-    label: '투자사',
-    value: 'investors',
-    href: '#',
-  },
-  {
-    label: '펀드',
-    value: 'funds',
-    href: '#',
-  },
-  {
-    label: '뉴스',
-    value: 'news',
-    href: '#',
-  },
-];
+// constants
+import { MENU_ITEMS } from './constants';
 
 export function MenuTabs() {
   const pathname = usePathname();
   const segments = pathname.split('/');
-  const [currentTab, setCurrentTab] = useState(segments[segments.length - 1]);
+  const [currentTab, setCurrentTab] = useState(segments[segments.length - 1]); // 현재 탭
 
+  // url 변경 시 현재 탭 업데이트 effect
   useEffect(() => {
     setCurrentTab(segments[segments.length - 1]);
   }, [segments]);
@@ -60,7 +30,7 @@ export function MenuTabs() {
         {MENU_ITEMS.map(item => (
           <Link
             href={item.href}
-            key={item.label}
+            key={item.value}
             className={`cursor-pointer text-[#939fb2] pb-2 ${currentTab === item.value ? 'text-foreground border-b-2 border-foreground' : 'hover:text-[#d9dfe8]'} `}
           >
             {item.label}
