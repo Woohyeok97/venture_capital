@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 // components
 import { Header } from '@/widgets/header/Header';
 import { Footer } from '@/widgets/footer/Footer';
+// providers
 import { OverlayProvider } from '@/app/providers/OverlayProvider';
 
 const geistSans = Geist({

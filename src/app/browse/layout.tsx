@@ -1,5 +1,5 @@
 // components
-import { MenuTabs } from './MenuTabs';
+import { MenuTabs } from '../../widgets/browse/ui/menuTabs/MenuTabs';
 
 interface LayoutProps {
   children: React.ReactNode;

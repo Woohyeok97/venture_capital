@@ -21,7 +21,7 @@ export function Navigation() {
   const path = usePathname();
   const prevPath = useRef(path);
 
-  // 페이지 url 변경 시 드롭다운 메뉴 닫기
+  // 페이지 url 변경 시 드롭다운 메뉴 닫기 effect
   useEffect(() => {
     if (prevPath.current !== path) {
       setIsOpen(false);

@@ -17,17 +17,19 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
   const path = usePathname();
   const prevPath = useRef(path);
 
+  // 오버레이 열기 핸들러
   const openOverlay = (content: Content) => {
     setIsOpen(true);
     setContent(() => content);
   };
 
+  // 오버레이 닫기 핸들러
   const closeOverlay = () => {
     setIsOpen(false);
     setContent(null);
   };
 
-  // 페이지 url 변경 시 오버레이 닫기
+  // 페이지 url 변경 시 오버레이 닫는 effect
   useEffect(() => {
     if (isOpen && prevPath.current !== path) {
       closeOverlay();
@@ -56,6 +58,7 @@ export function OverlayProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// 오버레이 컨텍스트 반환 커스텀 훅
 export function useOverlay() {
   const context = useContext(OverlayContext);
   if (!context) {

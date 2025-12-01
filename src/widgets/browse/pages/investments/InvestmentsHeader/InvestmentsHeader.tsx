@@ -1,7 +1,7 @@
 'use client';
 // components
 import { Info } from 'lucide-react';
-import { InvestmentsGuide } from '@/widgets/page/investments/InvestmentsHeader/InvestmentsGuide/InvestmentsGuide';
+import { InvestmentsGuide } from '@/widgets/browse/pages/investments/InvestmentsHeader/InvestmentsGuide/InvestmentsGuide';
 // hooks
 import { useOverlay } from '@/app/providers/OverlayProvider';
 
